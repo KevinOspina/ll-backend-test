@@ -24,7 +24,7 @@ steps:
 
 - task: Gradle@2
   inputs:
-    gradleWrapperFile: 'gradle-test'
+    gradleWrapperFile: 'test'
     tasks: 'test'
     publishJUnitResults: true
     testResultsFiles: '**/TEST-SONAR-*.xml'
