@@ -21,15 +21,3 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'build'
-
-
-services:
-    database:
-        image: 'mongo'
-        container_name: 'test-devops'
-        environment: 
-            - MONGO_INITDB_DATABASE: $(DB_NAME)
-            - MONGO_INITDB_ROOT_PASSWORD: $(DB_PASS)
-            - MONGO_INITDB_ROOT_USERNAME: $(DB_USER)
-        ports:
-            - $(DB_PORT)
