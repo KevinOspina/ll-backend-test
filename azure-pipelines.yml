@@ -21,3 +21,16 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'build'
+
+- task: Gradle@2
+  inputs:
+    gradleWrapperFile: 'gradle-test'
+    tasks: 'test'
+    publishJUnitResults: true
+    testResultsFiles: '**/TEST-SONAR-*.xml'
+    testRunTitle: 'Sonar'
+    javaHomeOption: 'JDKVersion'
+    sonarQubeRunAnalysis: true
+    sqGradlePluginVersionChoice: 'specify'
+    sonarQubeGradlePluginVersion: '2.6.1'
+    spotBugsAnalysis: false
